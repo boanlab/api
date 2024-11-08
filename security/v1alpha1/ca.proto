@@ -34,7 +34,7 @@ message IstioCertificateRequest {
   string csr = 1;
   // Optional: requested certificate validity period, in seconds.
   
-  string ssl_impl = 2;
+  string ssl_implementation = 2;
 
   string signature_algorithm = 3;
   
