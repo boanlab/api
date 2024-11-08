@@ -33,12 +33,17 @@ message IstioCertificateRequest {
   // and other fields in the generated certificate may be overwritten by the CA.
   string csr = 1;
   // Optional: requested certificate validity period, in seconds.
-  int64 validity_duration = 3;
+  
+  string ssl_impl = 2;
+
+  string signature_algorithm = 3;
+  
+  int64 validity_duration = 4;
 
   // $hide_from_docs
   // Optional: Opaque metadata provided by the XDS node to Istio.
   // Supported metadata: WorkloadName, WorkloadIP, ClusterID
-  google.protobuf.Struct metadata = 4;
+  google.protobuf.Struct metadata = 5;
 }
 
 // Certificate response message.
