@@ -20,7 +20,7 @@ package istio.mcp.v1alpha1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package="istio.io/api/mcp/v1alpha1";
+option go_package="github.com/boanlab/api/mcp/v1alpha1";
 
 // Metadata information that all resources within the Mesh Configuration Protocol must have.
 message Metadata {

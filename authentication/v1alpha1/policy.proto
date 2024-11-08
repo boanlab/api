@@ -22,7 +22,7 @@ package istio.authentication.v1alpha1;
 
 import "google/api/field_behavior.proto";
 
-option go_package = "istio.io/api/authentication/v1alpha1";
+option go_package = "github.com/boanlab/api/authentication/v1alpha1";
 
 // $hide_from_docs
 // Describes how to match a given string. Match is case-sensitive.

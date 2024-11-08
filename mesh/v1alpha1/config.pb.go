@@ -34,7 +34,7 @@ import (
 	wrappers "github.com/golang/protobuf/ptypes/wrappers"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	v1alpha3 "istio.io/api/networking/v1alpha3"
+	v1alpha3 "github.com/boanlab/api/networking/v1alpha3"
 	reflect "reflect"
 	sync "sync"
 )

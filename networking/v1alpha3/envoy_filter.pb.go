@@ -402,7 +402,7 @@ import (
 	_struct "github.com/golang/protobuf/ptypes/struct"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	v1beta1 "istio.io/api/type/v1beta1"
+	v1beta1 "github.com/boanlab/api/type/v1beta1"
 	reflect "reflect"
 	sync "sync"
 )

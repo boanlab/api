@@ -23,7 +23,7 @@ import "type/v1beta1/selector.proto";
 
 package istio.security.v1beta1;
 
-option go_package="istio.io/api/security/v1beta1";
+option go_package="github.com/boanlab/api/security/v1beta1";
 
 // PeerAuthentication defines mutual TLS (mTLS) requirements for incoming connections.
 //

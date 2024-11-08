@@ -28,7 +28,7 @@ import (
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	v1alpha1 "istio.io/api/analysis/v1alpha1"
+	v1alpha1 "github.com/boanlab/api/analysis/v1alpha1"
 	reflect "reflect"
 	sync "sync"
 )

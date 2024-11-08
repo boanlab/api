@@ -24,7 +24,7 @@ syntax = "proto3";
 
 package stackdriver.config.v1alpha1;
 
-option go_package = "istio.io/api/envoy/extensions/stackdriver/config/v1alpha1";
+option go_package = "github.com/boanlab/api/envoy/extensions/stackdriver/config/v1alpha1";
 
 import "google/protobuf/duration.proto";
 import "google/protobuf/wrappers.proto";

@@ -86,7 +86,7 @@ import "type/v1beta1/selector.proto";
 //
 package istio.networking.v1beta1;
 
-option go_package= "istio.io/api/networking/v1beta1";
+option go_package= "github.com/boanlab/api/networking/v1beta1";
 
 // `ProxyConfig` exposes proxy level configuration options.
 //

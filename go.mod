@@ -1,4 +1,4 @@
-module istio.io/api
+module github.com/boanlab/api
 
 go 1.22.0
 

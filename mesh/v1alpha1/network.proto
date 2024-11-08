@@ -18,7 +18,7 @@ package istio.mesh.v1alpha1;
 
 import "google/api/field_behavior.proto";
 
-option go_package="istio.io/api/mesh/v1alpha1";
+option go_package="github.com/boanlab/api/mesh/v1alpha1";
 
 // Network provides information about the endpoints in a routable L3
 // network. A single routable L3 network can have one or more service

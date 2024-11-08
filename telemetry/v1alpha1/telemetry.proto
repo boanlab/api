@@ -232,7 +232,7 @@ import "google/protobuf/wrappers.proto";
 //
 package istio.telemetry.v1alpha1;
 
-option go_package = "istio.io/api/telemetry/v1alpha1";
+option go_package = "github.com/boanlab/api/telemetry/v1alpha1";
 
 // <!-- crd generation tags
 // +cue-gen:Telemetry:groupName:telemetry.istio.io

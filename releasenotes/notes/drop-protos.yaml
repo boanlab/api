@@ -15,7 +15,7 @@ releaseNotes:
 upgradeNotes:
 - title: Internal API protobuf changes
   content: |
-    If you do not use Istio APIs from Go (via `istio.io/api` or `istio.io/client-go`) or Protobuf (from `istio.io/api`), this change does not impact you.
+    If you do not use Istio APIs from Go (via `github.com/boanlab/api` or `istio.io/client-go`) or Protobuf (from `github.com/boanlab/api`), this change does not impact you.
 
     In prior versions, Istio APIs had identical contents replicated across multiple versions.
     For example, the same `VirtualService` protobuf message is defined 3 times (`v1alpha3`, `v1beta1`, and `v1`).

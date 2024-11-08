@@ -22,7 +22,7 @@ import "networking/v1beta1/proxy_config.proto";
 
 package istio.mesh.v1alpha1;
 
-option go_package="istio.io/api/mesh/v1alpha1";
+option go_package="github.com/boanlab/api/mesh/v1alpha1";
 
 // AuthenticationPolicy defines how the proxy is authenticated when it connects to the control plane.
 // It can be set for two different scopes, mesh-wide or set on a per-pod basis using the ProxyConfig annotation.

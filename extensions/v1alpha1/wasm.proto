@@ -207,7 +207,7 @@ import "google/api/field_behavior.proto";
 //
 package istio.extensions.v1alpha1;
 
-option go_package="istio.io/api/extensions/v1alpha1";
+option go_package="github.com/boanlab/api/extensions/v1alpha1";
 
 // WasmPlugins provides a mechanism to extend the functionality provided by
 // the Istio proxy through WebAssembly filters.

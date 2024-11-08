@@ -25,7 +25,7 @@ package v2alpha1
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	v1alpha1 "istio.io/api/authentication/v1alpha1"
+	v1alpha1 "github.com/boanlab/api/authentication/v1alpha1"
 	reflect "reflect"
 	sync "sync"
 )

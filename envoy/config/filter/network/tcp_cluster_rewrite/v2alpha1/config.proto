@@ -18,7 +18,7 @@ syntax = "proto3";
 
 package istio.envoy.config.filter.network.tcp_cluster_rewrite.v2alpha1;
 
-option go_package = "istio.io/api/envoy/config/filter/network/tcp_cluster_rewrite/v2alpha1";
+option go_package = "github.com/boanlab/api/envoy/config/filter/network/tcp_cluster_rewrite/v2alpha1";
 
 // TcpClusterRewrite is the config for the TCP cluster rewrite filter.
 message TcpClusterRewrite {

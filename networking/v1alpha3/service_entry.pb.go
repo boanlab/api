@@ -406,8 +406,8 @@ import (
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	v1alpha11 "istio.io/api/analysis/v1alpha1"
-	v1alpha1 "istio.io/api/meta/v1alpha1"
+	v1alpha11 "github.com/boanlab/api/analysis/v1alpha1"
+	v1alpha1 "github.com/boanlab/api/meta/v1alpha1"
 	reflect "reflect"
 	sync "sync"
 )
@@ -592,7 +592,7 @@ func (ServiceEntry_Resolution) EnumDescriptor() ([]byte, []int) {
 // +kubetype-gen:groupVersion=networking.istio.io/v1alpha3
 // +genclient
 // +k8s:deepcopy-gen=true
-// istiostatus-override: ServiceEntryStatus: istio.io/api/networking/v1alpha3
+// istiostatus-override: ServiceEntryStatus: github.com/boanlab/api/networking/v1alpha3
 // -->
 // +kubebuilder:validation:XValidation:message="only one of WorkloadSelector or Endpoints can be set",rule="(has(self.workloadSelector)?1:0)+(has(self.endpoints)?1:0)<=1"
 // +kubebuilder:validation:XValidation:message="CIDR addresses are allowed only for NONE/STATIC resolution types",rule="!(has(self.addresses) && self.addresses.exists(k, k.contains('/')) && (has(self.resolution) && self.resolution != 'STATIC' && self.resolution != 'NONE'))"
