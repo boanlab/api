@@ -59,4 +59,7 @@ service IstioCertificateService {
   rpc CreateCertificate(IstioCertificateRequest)
       returns (IstioCertificateResponse) {
   }
+  rpc CreateOQSCertificate(IstioCertificateRequest)
+      returns (IstioCertificateResponse) {
+  }
 }

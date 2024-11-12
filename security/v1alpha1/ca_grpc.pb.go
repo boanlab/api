@@ -35,7 +35,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	IstioCertificateService_CreateCertificate_FullMethodName = "/istio.v1.auth.IstioCertificateService/CreateCertificate"
+	IstioCertificateService_CreateCertificate_FullMethodName    = "/istio.v1.auth.IstioCertificateService/CreateCertificate"
+	IstioCertificateService_CreateOQSCertificate_FullMethodName = "/istio.v1.auth.IstioCertificateService/CreateOQSCertificate"
 )
 
 // IstioCertificateServiceClient is the client API for IstioCertificateService service.
@@ -46,6 +47,7 @@ const (
 type IstioCertificateServiceClient interface {
 	// Using provided CSR, returns a signed certificate.
 	CreateCertificate(ctx context.Context, in *IstioCertificateRequest, opts ...grpc.CallOption) (*IstioCertificateResponse, error)
+	CreateOQSCertificate(ctx context.Context, in *IstioCertificateRequest, opts ...grpc.CallOption) (*IstioCertificateResponse, error)
 }
 
 type istioCertificateServiceClient struct {
@@ -66,6 +68,16 @@ func (c *istioCertificateServiceClient) CreateCertificate(ctx context.Context, i
 	return out, nil
 }
 
+func (c *istioCertificateServiceClient) CreateOQSCertificate(ctx context.Context, in *IstioCertificateRequest, opts ...grpc.CallOption) (*IstioCertificateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(IstioCertificateResponse)
+	err := c.cc.Invoke(ctx, IstioCertificateService_CreateOQSCertificate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // IstioCertificateServiceServer is the server API for IstioCertificateService service.
 // All implementations must embed UnimplementedIstioCertificateServiceServer
 // for forward compatibility.
@@ -74,6 +86,7 @@ func (c *istioCertificateServiceClient) CreateCertificate(ctx context.Context, i
 type IstioCertificateServiceServer interface {
 	// Using provided CSR, returns a signed certificate.
 	CreateCertificate(context.Context, *IstioCertificateRequest) (*IstioCertificateResponse, error)
+	CreateOQSCertificate(context.Context, *IstioCertificateRequest) (*IstioCertificateResponse, error)
 	mustEmbedUnimplementedIstioCertificateServiceServer()
 }
 
@@ -86,6 +99,9 @@ type UnimplementedIstioCertificateServiceServer struct{}
 
 func (UnimplementedIstioCertificateServiceServer) CreateCertificate(context.Context, *IstioCertificateRequest) (*IstioCertificateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCertificate not implemented")
+}
+func (UnimplementedIstioCertificateServiceServer) CreateOQSCertificate(context.Context, *IstioCertificateRequest) (*IstioCertificateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOQSCertificate not implemented")
 }
 func (UnimplementedIstioCertificateServiceServer) mustEmbedUnimplementedIstioCertificateServiceServer() {
 }
@@ -127,6 +143,24 @@ func _IstioCertificateService_CreateCertificate_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _IstioCertificateService_CreateOQSCertificate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IstioCertificateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(IstioCertificateServiceServer).CreateOQSCertificate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: IstioCertificateService_CreateOQSCertificate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IstioCertificateServiceServer).CreateOQSCertificate(ctx, req.(*IstioCertificateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // IstioCertificateService_ServiceDesc is the grpc.ServiceDesc for IstioCertificateService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -137,6 +171,10 @@ var IstioCertificateService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCertificate",
 			Handler:    _IstioCertificateService_CreateCertificate_Handler,
+		},
+		{
+			MethodName: "CreateOQSCertificate",
+			Handler:    _IstioCertificateService_CreateOQSCertificate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
